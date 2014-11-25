@@ -41,7 +41,14 @@ require([
   var $bgList = $('.bgChanger-list li'),
     $phoneScreen = $('.content-phoneScreenBg');
 
-  $.ajax('/qrcode', {success: function (data) {$('.qrcode').html(data);}});
+  $.ajax('/qrcode', {
+    success: function (data) {
+      $('.qrcode').html(data);
+    },
+    error: function() {
+       $('.qrcode').html('<img src="img/qrcode_error.jpg">');
+    }
+  });
   $bgList.click(function(){
     $.backstretch($(this).attr('data-bg'));
     $phoneScreen.backstretch($(this).attr('data-bg'));
