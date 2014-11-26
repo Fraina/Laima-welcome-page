@@ -50,12 +50,12 @@ require([
     }
   });
   $bgList.click(function(){
-    $.backstretch($(this).attr('data-bg'));
-    $phoneScreen.backstretch($(this).attr('data-bg'));
+    $.backstretch($(this).attr('data-bg'), {speed: 150});
+    $phoneScreen.backstretch($(this).attr('data-bg'), {speed: 150});
   });
 
-  $.backstretch($bgList.first().attr('data-bg'));
-  $phoneScreen.backstretch($bgList.first().attr('data-bg'));
+  $.backstretch($bgList.first().attr('data-bg'), {speed: 150});
+  $phoneScreen.backstretch($bgList.first().attr('data-bg'), {speed: 150});
   // ----------------------------------
 
   Backbone.history.start();
